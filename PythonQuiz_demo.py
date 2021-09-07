@@ -1,14 +1,11 @@
-import re as re
-
 with open("Spørsmål.txt") as file:
     all_text = file.read()
-Qlist = all_text.split("Q:")
-Qlist.remove("")
-QA_list = [[] for i in range(len(Qlist))]
+Q = all_text.split("Q:")
+Q.remove("")
+QA_list = [[] for i in range(len(Q))]
 
-for i in range(len(Qlist)):
-    Q = Qlist[i]
-    QA = Q.split("-")
+for i in range(len(Q)):
+    QA = Q[i].split("-")
     for j in range(len(QA)):
         a = QA[j]
         a = a.strip()
@@ -19,6 +16,7 @@ nr = int(input("Which question do you want?\n"))-1
 print("\n\n{}\n".format(QA_list[nr][0]))
 for i in range(1, len(QA_list[nr])-1):
     print("{})   {}".format(i, QA_list[nr][i]))
+print("\n")
 
 success = False
 while success == False:
