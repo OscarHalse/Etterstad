@@ -1,0 +1,10 @@
+Q: Velg ett av alternativene under
+A:  - Alternativ 1
+    - Alternativ 2
+    - Alternativ 3
+    - 2
+
+Q: Har dette programmet fungert som det skal?
+A:  - Ja
+    - Nei
+    - 1
