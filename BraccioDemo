@@ -1,0 +1,42 @@
+// Go to tools>manage libraries>"braccio" by Arduino>press "install">copy&paste code bellow to run
+
+  #include <Braccio.h>
+  #include <Servo.h>
+
+  Servo base;
+  Servo shoulder;
+  Servo elbow;
+  Servo wrist_ver;
+  Servo wrist_rot;
+  Servo gripper;
+
+void setup() {
+  Braccio.begin();
+  delay(3000);
+//Braccio.ServoMovement(dly, m1, m2, m3, m4, m5, m6);
+
+// To default position
+  Braccio.ServoMovement(20, 90, 90, 90, 90, 90, 10);
+  delay(2000);
+// Move to pinch cup
+  Braccio.ServoMovement(20, 15, 90, 90, 90, 90, 10);
+  Braccio.ServoMovement(20, 15, 45, 0, 135, 90, 10);
+  delay(300);
+  Braccio.ServoMovement(20, 15, 45, 0, 135, 90, 73);
+  delay(1000);
+// Move cup into default position
+  Braccio.ServoMovement(20, 90, 90, 90, 90, 90, 73);
+// Move to put cup back
+  Braccio.ServoMovement(20, 15, 90, 90, 90, 90, 73);
+  Braccio.ServoMovement(20, 15, 45, 0, 135, 90, 73);
+  delay(300);
+  Braccio.ServoMovement(20, 15, 45, 0, 135, 90, 10);
+  delay(1000);
+  Braccio.ServoMovement(20, 15, 90, 90, 90, 90, 10);
+  Braccio.ServoMovement(20, 90, 90, 90, 90, 90, 10);
+}
+
+void loop() {
+   
+  
+}
